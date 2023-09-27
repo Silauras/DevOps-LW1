@@ -1,0 +1,19 @@
+version: '3'
+
+volumes:
+  promin_db_auth:
+    driver: local
+
+services:
+  postgres:
+    container_name: postgres
+    image: postgres:15.1
+    volumes:
+      - promin_db_auth:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: promin_db_auth
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - "5432:5432"
