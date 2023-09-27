@@ -1,1 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/khai_devops?useSSL=false
+    username: root
+    password: root
 
+server:
+  port: 8090
